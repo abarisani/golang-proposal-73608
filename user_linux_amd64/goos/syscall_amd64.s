@@ -30,6 +30,9 @@ TEXT cpuinit(SB),NOSPLIT|NOFRAME,$0
 	MOVQ	·RamStart(SB), SP
 	MOVQ	·RamSize(SB), AX
 	MOVQ	·RamStackOffset(SB), BX
+	ADDQ	AX, SP
+	SUBQ	BX, SP
+
 	JMP	_rt0_tamago_start(SB)
 
 // func sys_clock_gettime() int64
