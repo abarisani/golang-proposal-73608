@@ -16,7 +16,9 @@ package goos
 import (
 	"unsafe"
 
-	"github.com/usbarmory/arm64"
+	"github.com/usbarmory/tamago/arm64"
+	"github.com/usbarmory/tamago/board/nxp/imx8mpevk"
+	"github.com/usbarmory/tamago/soc/nxp/imx8mp"
 )
 
 var (
