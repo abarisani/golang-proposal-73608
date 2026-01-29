@@ -13,20 +13,7 @@
 // TamaGo framework for bare metal Go, see https://github.com/usbarmory/tamago.
 package goos
 
-import (
-	"unsafe"
-)
-
-var (
-	RamStart       uint64 = 0x80000000
-	RamSize        uint64 = 0x20000000
-	RamStackOffset uint64 = 0x100
-	Exit                  = sys_exit
-
-	Idle   func(code int64)                    = nil
-	ProcID func() uint64                       = nil
-	Task   func(sp, mp, gp, fn unsafe.Pointer) = nil
-)
+import "unsafe"
 
 // defined in syscall_*.s
 func sys_exit(code int32)
@@ -34,12 +21,25 @@ func sys_write(c *byte)
 func sys_clock_gettime() (ns int64)
 func sys_getrandom(b []byte, n int)
 
-func Hwinit0() {}
-func Hwinit1() {}
-func InitRNG() {}
+var (
+	RamStart       uint = 0x80000000
+	RamSize        uint = 0x20000000
+	RamStackOffset uint = 0x100
 
-func Nanotime() int64 {
-	return sys_clock_gettime()
+	Bloc   = uintptr(RamStart)
+	Exit   = sys_exit
+	Idle   func(code int64)
+	ProcID func() uint64
+	Task   func(sp, mp, gp, fn unsafe.Pointer)
+
+	Hwinit0  = func() {}
+	InitRNG  = func() {}
+	Nanotime = sys_clock_gettime
+	Hwinit1  = func() {}
+)
+
+func GetRandomData(b []byte) {
+	sys_getrandom(b, len(b))
 }
 
 // preallocated memory to avoid malloc during panic
@@ -48,12 +48,4 @@ var a [1]byte
 func Printk(c byte) {
 	a[0] = c
 	sys_write(&a[0])
-}
-
-func GetRandomData(b []byte) {
-	sys_getrandom(b, len(b))
-}
-
-func Bloc() uintptr {
-	return uintptr(RamStart)
 }
