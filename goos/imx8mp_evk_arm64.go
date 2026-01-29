@@ -6,8 +6,8 @@
 // Use of this source code is governed by the license
 // that can be found in the LICENSE file.
 
-// Package goos provides support for using `GOOS=tamago` in Linux user
-// space.
+// Package goos provides support for using `GOOS=tamago` on 8MPLUSLPD4-EVK
+// boards.
 //
 // This package is only meant to be used with `GOOS=tamago` as supported by the
 // TamaGo framework for bare metal Go, see https://github.com/usbarmory/tamago.
