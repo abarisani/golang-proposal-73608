@@ -16,6 +16,7 @@ package goos
 import "unsafe"
 
 // defined in syscall_*.s
+func CPUInit()
 func sys_exit(code int32)
 func sys_write(c *byte)
 func sys_clock_gettime() (ns int64)

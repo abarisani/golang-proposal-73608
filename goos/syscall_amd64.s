@@ -17,7 +17,7 @@
 #define SYS_clock_gettime	228
 #define SYS_getrandom		318
 
-TEXT cpuinit(SB),NOSPLIT|NOFRAME,$0
+TEXT ·CPUInit(SB),NOSPLIT|NOFRAME,$0
 	MOVQ	·RamStart(SB), DI
 	MOVQ	·RamSize(SB), SI
 	MOVL	$0x3, DX	// PROT_READ | PROT_WRITE

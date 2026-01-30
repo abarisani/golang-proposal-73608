@@ -21,6 +21,9 @@ import (
 	"github.com/usbarmory/tamago/soc/nxp/imx8mp"
 )
 
+// TODO
+func CPUInit()
+
 var (
 	RamStart       uint = imx8mp.RamStart
 	RamSize        uint = imx8mpevk.RamSize
