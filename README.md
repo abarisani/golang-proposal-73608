@@ -10,6 +10,6 @@ It requires the following modified Go distribution:
 Example:
 
 ```
-GOOS=tamago GOARCH=amd64 GOOSPKG="github.com/abarisani/golang-proposal-73608@v0.0.3" run -ldflags '-X runtime.testBinary=true' main.go
+GOOS=tamago GOARCH=amd64 GOOSPKG="github.com/abarisani/golang-proposal-73608@v0.0.3" go run -ldflags '-X runtime.testBinary=true' main.go
 hello world
 ```
