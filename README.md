@@ -11,5 +11,6 @@ Example:
 
 ```
 GOOS=tamago GOARCH=amd64 GOOSPKG="github.com/abarisani/golang-proposal-73608@v0.0.3" go run -ldflags '-X runtime.testBinary=true' main.go
+go: downloading github.com/abarisani/golang-proposal-73608 v0.0.3
 hello world
 ```
