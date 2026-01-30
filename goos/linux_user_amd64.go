@@ -17,7 +17,7 @@ import "unsafe"
 
 var (
 	RamStart       uint = 0x80000000
-	RamSize        uint = 0x20000000
+	RamSize        uint = 0x20000000 // 512MB
 	RamStackOffset uint = 0x100
 
 	Bloc   = uintptr(RamStart)
@@ -32,7 +32,7 @@ var (
 	Hwinit1  = func() {}
 )
 
-// defined in syscall_*.s
+// defined in linux_user*.s
 func CPUInit()
 func sys_exit(code int32)
 func sys_write(c *byte)
