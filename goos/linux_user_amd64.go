@@ -15,13 +15,6 @@ package goos
 
 import "unsafe"
 
-// defined in syscall_*.s
-func CPUInit()
-func sys_exit(code int32)
-func sys_write(c *byte)
-func sys_clock_gettime() (ns int64)
-func sys_getrandom(b []byte, n int)
-
 var (
 	RamStart       uint = 0x80000000
 	RamSize        uint = 0x20000000
@@ -38,6 +31,13 @@ var (
 	Nanotime = sys_clock_gettime
 	Hwinit1  = func() {}
 )
+
+// defined in syscall_*.s
+func CPUInit()
+func sys_exit(code int32)
+func sys_write(c *byte)
+func sys_clock_gettime() (ns int64)
+func sys_getrandom(b []byte, n int)
 
 func GetRandomData(b []byte) {
 	sys_getrandom(b, len(b))
