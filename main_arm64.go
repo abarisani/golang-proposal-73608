@@ -3,9 +3,11 @@ package main
 import (
 	"fmt"
 
-	// TODO: for now goos package must be loaded to cache any nostd module
+	// FIXME: for now goos imports must be loaded to cache any nostd module
 	// imported by GOOSPKG.
-	_ "github.com/abarisani/golang-proposal-73608/goos"
+	_ "github.com/usbarmory/tamago/arm64"
+	_ "github.com/usbarmory/tamago/board/nxp/imx8mpevk"
+	_ "github.com/usbarmory/tamago/soc/nxp/imx8mp"
 )
 
 func main() {
