@@ -28,7 +28,7 @@ var (
 
 	Bloc   = uintptr(RamStart)
 	Exit   = sys_exit
-	Idle   func(code int64)
+	Idle   func(until int64)
 	ProcID func() uint64
 	Task   func(sp, mp, gp, fn unsafe.Pointer)
 

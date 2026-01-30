@@ -28,7 +28,7 @@ var (
 
 	Bloc   uintptr
 	Exit   func(code int32)
-	Idle   func(code int64)
+	Idle   func(until int64)
 	ProcID func() uint64
 	Task   func(sp, mp, gp, fn unsafe.Pointer)
 
