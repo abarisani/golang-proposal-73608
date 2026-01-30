@@ -1,6 +1,6 @@
 set -x
 # should also work with
-# GOOSPKG="github.com/abarisani/golang-proposal-73608@v0.0.2"
+# GOOSPKG="github.com/abarisani/golang-proposal-73608@v0.0.3"
 
 # user/linux amd64 example
 GOOS=tamago GOARCH=amd64 GOOSPKG=${PWD} $TAMAGO run -ldflags '-X runtime.testBinary=true' main.go
