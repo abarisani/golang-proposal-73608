@@ -1,6 +1,6 @@
 set -x
 # should also work with
-# GOOSPKG="github.com/abarisani/golang-proposal-73608@v0.0.3"
+# GOOSPKG="github.com/abarisani/golang-proposal-73608@v0.0.4"
 
 # user/linux amd64 example
 GOOS=tamago GOARCH=amd64 GOOSPKG=${PWD} $TAMAGO run main.go
