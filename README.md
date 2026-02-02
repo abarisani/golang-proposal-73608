@@ -10,7 +10,13 @@ It requires the following modified Go distribution:
 Example:
 
 ```
-GOOS=tamago GOARCH=amd64 GOOSPKG="github.com/abarisani/golang-proposal-73608@v0.0.3" go run -ldflags '-X runtime.testBinary=true' main.go
-go: downloading github.com/abarisani/golang-proposal-73608 v0.0.3
+GOOS=tamago GOARCH=amd64 go run main.go
 hello world
+
+GOOS=tamago GOARCH=arm64 GOOSPKG="github.com/usbarmory/tamago@v0.0.0-20260202162439-a56f03727d4a" go build -ldflags "-T 0x40010000 -R 0x1000" main.go
+qemu-system-aarch64 \
+	-machine imx8mp-evk -m 6G -smp 1 \
+	-nographic -monitor none -semihosting -serial stdio \
+	-net nic,model=imx.enet,netdev=net0 -netdev tap,id=net0,ifname=tap0,script=no,downscript=no \
+	-kernel main_imx8mpevk
 ```

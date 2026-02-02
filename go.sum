@@ -1,2 +1,4 @@
-github.com/abarisani/tamago v0.0.0-20260129141628-4b1a6a1be555 h1:npzQr6+2oWjQJBNzQbB3udsoaMm9cEQd8Ss/g1z8Ha8=
-github.com/abarisani/tamago v0.0.0-20260129141628-4b1a6a1be555/go.mod h1:jZIgiYSQmVoZyxvzHmzamNi36eZv790/5SO6lhds+W4=
+github.com/abarisani/tamago v0.0.0-20260202160503-f9f61b81b52b h1:+7Nl3O9WtI14BGLv9cpw+PzRH5XLtomc996/Ija5+DY=
+github.com/abarisani/tamago v0.0.0-20260202160503-f9f61b81b52b/go.mod h1:jZIgiYSQmVoZyxvzHmzamNi36eZv790/5SO6lhds+W4=
+github.com/usbarmory/tamago v0.0.0-20260202162439-a56f03727d4a h1:zH60gStV0JlyLV9oUScQDIZ1/YrFPgfzXSF9/zDKWeI=
+github.com/usbarmory/tamago v0.0.0-20260202162439-a56f03727d4a/go.mod h1:jZIgiYSQmVoZyxvzHmzamNi36eZv790/5SO6lhds+W4=

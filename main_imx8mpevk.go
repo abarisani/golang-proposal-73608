@@ -1,0 +1,13 @@
+package main
+
+import (
+	"fmt"
+	"runtime"
+
+	_ "github.com/usbarmory/tamago/goos"
+	_ "github.com/usbarmory/tamago/board/nxp/imx8mpevk"
+)
+
+func main() {
+	fmt.Printf("Hello from %s • %s/%s\n", runtime.Version(), runtime.GOOS, runtime.GOARCH)
+}

@@ -1,10 +1,11 @@
-set -x
-# should also work with
-# GOOSPKG="github.com/abarisani/golang-proposal-73608@v0.0.4"
+# user/linux amd64 example, using GOROOT/src/runtime/goos as GOOSPKG
+GOOS=tamago GOARCH=amd64 $TAMAGO run main_amd64.go
 
-# user/linux amd64 example
-GOOS=tamago GOARCH=amd64 GOOSPKG=${PWD} $TAMAGO run main.go
-
-# imx8mp evk arm64 example (WiP)
-#GOOS=tamago GOARCH=arm64 GOOSPKG=${PWD} $TAMAGO run -ldflags "-T 0x40010000 -R 0x1000" main.go
-#qemu-system-aarch64 -machine imx8mp-evk -m 512M -smp 1 -nographic -monitor none -semihosting -serial stdio -net nic,model=imx.enet,netdev=net0 -netdev tap,id=net0,ifname=tap0,script=no,downscript=no imx8mp_evk_arm64
+# imx8mp evk arm64 example
+GOOS=tamago GOARCH=arm64 GOOSPKG="github.com/usbarmory/tamago@v0.0.0-20260202162439-a56f03727d4a" $TAMAGO build -ldflags "-T 0x40010000 -R 0x1000" main_imx8mpevk.go && \
+echo "launching QEMU (Ctrl+C to quit)" && \
+qemu-system-aarch64 \
+	-machine imx8mp-evk -m 6G -smp 1 \
+	-nographic -monitor none -semihosting -serial stdio \
+	-net nic,model=imx.enet,netdev=net0 -netdev tap,id=net0,ifname=tap0,script=no,downscript=no \
+	-kernel main_imx8mpevk
