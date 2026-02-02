@@ -3,7 +3,7 @@ set -x
 # GOOSPKG="github.com/abarisani/golang-proposal-73608@v0.0.3"
 
 # user/linux amd64 example
-GOOS=tamago GOARCH=amd64 GOOSPKG=${PWD} $TAMAGO run -ldflags '-X runtime.testBinary=true' main.go
+GOOS=tamago GOARCH=amd64 GOOSPKG=${PWD} $TAMAGO run main.go
 
 # imx8mp evk arm64 example (WiP)
 #GOOS=tamago GOARCH=arm64 GOOSPKG=${PWD} $TAMAGO run -ldflags "-T 0x40010000 -R 0x1000" main.go
