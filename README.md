@@ -20,3 +20,7 @@ qemu-system-aarch64 \
 	-net nic,model=imx.enet,netdev=net0 -netdev tap,id=net0,ifname=tap0,script=no,downscript=no \
 	-kernel main_imx8mpevk
 ```
+
+For a complete port of [tamago-example](https://github.com/usbarmory/tamago-example) to proposal #73608 see:
+
+  * https://github.com/abarisani/tamago-example/tree/go1.26-goos
