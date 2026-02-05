@@ -5,7 +5,7 @@ This repository is a PoC for the following Go proposal:
 
 It requires the following modified Go distribution:
 
-  * https://github.com/abarisani/tamago-go/tree/tamago1.26rc2-73608
+  * https://github.com/abarisani/tamago-go/tree/tamago1.26rc3-73608
 
 Example:
 
