@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"runtime"
 
-	_ "github.com/usbarmory/tamago/goos"
 	_ "github.com/usbarmory/tamago/board/nxp/imx8mpevk"
 )
 
