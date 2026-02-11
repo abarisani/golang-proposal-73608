@@ -13,7 +13,7 @@ Example:
 GOOS=tamago GOARCH=amd64 go run main.go
 hello world
 
-GOOS=tamago GOARCH=arm64 GOOSPKG="github.com/usbarmory/tamago@v0.0.0-20260202162439-a56f03727d4a" go build -ldflags "-T 0x40010000 -R 0x1000" main.go
+GOOS=tamago GOARCH=arm64 GOOSPKG=github.com/usbarmory/tamago go build -ldflags "-T 0x40010000 -R 0x1000" main.go
 qemu-system-aarch64 \
 	-machine imx8mp-evk -m 6G -smp 1 \
 	-nographic -monitor none -semihosting -serial stdio \
