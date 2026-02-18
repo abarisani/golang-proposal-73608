@@ -7,5 +7,4 @@ echo "launching QEMU (Ctrl+C to quit)" && \
 qemu-system-aarch64 \
 	-machine imx8mp-evk -m 6G -smp 1 \
 	-nographic -monitor none -semihosting -serial stdio \
-	-net nic,model=imx.enet,netdev=net0 -netdev tap,id=net0,ifname=tap0,script=no,downscript=no \
 	-kernel main_imx8mpevk

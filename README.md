@@ -5,7 +5,7 @@ This repository is a PoC for the following Go proposal:
 
 It requires the following modified Go distribution:
 
-  * https://github.com/abarisani/tamago-go/tree/tamago1.26rc3-73608
+  * https://github.com/usbarmory/tamago-go/releases/tag/tamago-go1.26.0
 
 Example:
 
@@ -21,6 +21,4 @@ qemu-system-aarch64 \
 	-kernel main_imx8mpevk
 ```
 
-For a complete port of [tamago-example](https://github.com/usbarmory/tamago-example) to proposal #73608 see:
-
-  * https://github.com/abarisani/tamago-example/tree/go1.26-goos
+For a full example see [tamago-example](https://github.com/usbarmory/tamago-example).
